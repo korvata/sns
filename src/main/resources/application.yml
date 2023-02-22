@@ -1,0 +1,24 @@
+server:
+  port: 30100
+
+spring:
+  application:
+    name: member-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/test?createDatabaseIfNotExist=true
+    username: root
+    password: 12341234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  sql:
+    init:
+      mode: always
+  jpa:
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: create-drop
+      format-sql: true
+      show-sql: true
+      generate-ddl: true
+      dialect: org.hibernate.dialect.MySQL8Dialect

@@ -15,11 +15,15 @@ public class MemberWriteService {
     }
 
     //회원정보등록
-    public void addMember(RegisterMember registerMember) {
+    public RegisterMember addMember(RegisterMember registerMember) {
         Member member = Member.builder()
                 .nickName(registerMember.nickName())
                 .email(registerMember.email())
                 .birthDate(registerMember.birthDate())
                 .build();
+
+        memberRepository.save(member);
+
+        return registerMember;
     }
 }
